@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Regional 20</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<style>
+  	/* Always set the map height explicitly to define the size of the div
+   	* element that contains the map. */
+  	#map {
+    	height: 100%;
+  	}
+  	/* Optional: Makes the sample page fill the window. */
+  	html, body {
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+  	}
+	</style>
+  </head>
+  <body>
+	<div id="map"></div>
+	<script>
+
+  	// This example uses the Google Maps JavaScript API's Data layer
+  	// to create a rectangular polygon with 2 holes in it.
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 14.98,
+	center: {
+  	lat: 24.8090081,
+  	lng: 121.0005609
+	}
+  });
+
+var noPoi = [
+{
+  featureType: "poi",
+  stylers: [
+  { visibility: "off" }
+  ]
+}
+];
+map.setOptions({styles: noPoi});
+
+var polygonMask = new google.maps.Polygon({
+map:map,
+strokeColor: '#000000',
+strokeOpacity: 0.5,
+strokeWeight: 2,
+fillColor: '#CACACA',
+fillOpacity: 0.7,
+paths: [[new google.maps.LatLng(24.785132, 120.957224),
+new google.maps.LatLng(24.808507, 120.957224),
+new google.maps.LatLng(24.808507, 120.985226),
+new google.maps.LatLng(24.785132, 120.985226),
+new google.maps.LatLng(24.785132, 120.957224)],
+[new google.maps.LatLng(24.796313, 120.974916),
+new google.maps.LatLng(24.794979, 120.975951),
+new google.maps.LatLng(24.794022, 120.976800),
+new google.maps.LatLng(24.795325, 120.980696),
+new google.maps.LatLng(24.797015, 120.979283),
+new google.maps.LatLng(24.801953, 120.976611),
+new google.maps.LatLng(24.799489, 120.972674),
+new google.maps.LatLng(24.796313, 120.974916)]]});
+
+	</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcsp2nRvg6g_pxPel3cKcQSrBRg_f22Y&callback=initMap">
+	</script>
+  </body>
+</html>

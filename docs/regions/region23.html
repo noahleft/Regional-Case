@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Regional 23</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<style>
+  	/* Always set the map height explicitly to define the size of the div
+   	* element that contains the map. */
+  	#map {
+    	height: 100%;
+  	}
+  	/* Optional: Makes the sample page fill the window. */
+  	html, body {
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+  	}
+	</style>
+  </head>
+  <body>
+	<div id="map"></div>
+	<script>
+
+  	// This example uses the Google Maps JavaScript API's Data layer
+  	// to create a rectangular polygon with 2 holes in it.
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 14.98,
+	center: {
+  	lat: 24.8090081,
+  	lng: 121.0005609
+	}
+  });
+
+var noPoi = [
+{
+  featureType: "poi",
+  stylers: [
+  { visibility: "off" }
+  ]
+}
+];
+map.setOptions({styles: noPoi});
+
+var polygonMask = new google.maps.Polygon({
+map:map,
+strokeColor: '#000000',
+strokeOpacity: 0.5,
+strokeWeight: 2,
+fillColor: '#CACACA',
+fillOpacity: 0.7,
+paths: [[new google.maps.LatLng(24.718173, 120.949130),
+new google.maps.LatLng(24.811698, 120.949130),
+new google.maps.LatLng(24.811698, 121.061139),
+new google.maps.LatLng(24.718173, 121.061139),
+new google.maps.LatLng(24.718173, 120.949130)],
+[new google.maps.LatLng(24.762676, 120.989116),
+new google.maps.LatLng(24.760104, 120.990473),
+new google.maps.LatLng(24.755613, 120.992074),
+new google.maps.LatLng(24.755345, 120.996287),
+new google.maps.LatLng(24.756302, 121.000796),
+new google.maps.LatLng(24.756781, 121.004639),
+new google.maps.LatLng(24.756474, 121.008663),
+new google.maps.LatLng(24.754957, 121.013593),
+new google.maps.LatLng(24.754316, 121.016659),
+new google.maps.LatLng(24.753908, 121.019940),
+new google.maps.LatLng(24.755886, 121.020444),
+new google.maps.LatLng(24.757130, 121.020098),
+new google.maps.LatLng(24.758102, 121.019924),
+new google.maps.LatLng(24.759249, 121.019449),
+new google.maps.LatLng(24.760934, 121.018933),
+new google.maps.LatLng(24.762360, 121.018932),
+new google.maps.LatLng(24.763658, 121.019039),
+new google.maps.LatLng(24.764736, 121.018835),
+new google.maps.LatLng(24.765547, 121.018175),
+new google.maps.LatLng(24.766245, 121.017502),
+new google.maps.LatLng(24.767177, 121.016464),
+new google.maps.LatLng(24.766446, 121.015863),
+new google.maps.LatLng(24.766471, 121.012773),
+new google.maps.LatLng(24.766717, 121.012065),
+new google.maps.LatLng(24.767678, 121.011132),
+new google.maps.LatLng(24.768431, 121.010794),
+new google.maps.LatLng(24.769879, 121.010861),
+new google.maps.LatLng(24.770486, 121.010765),
+new google.maps.LatLng(24.771024, 121.010117),
+new google.maps.LatLng(24.771561, 121.009168),
+new google.maps.LatLng(24.771444, 121.005257),
+new google.maps.LatLng(24.771834, 121.003063),
+new google.maps.LatLng(24.773470, 121.000220),
+new google.maps.LatLng(24.772671, 120.999437),
+new google.maps.LatLng(24.771843, 120.998252),
+new google.maps.LatLng(24.772657, 120.997101),
+new google.maps.LatLng(24.772947, 120.995989),
+new google.maps.LatLng(24.771377, 120.994360),
+new google.maps.LatLng(24.769365, 120.994082),
+new google.maps.LatLng(24.767229, 120.994287),
+new google.maps.LatLng(24.767096, 120.993810),
+new google.maps.LatLng(24.767292, 120.993185),
+new google.maps.LatLng(24.767829, 120.992915),
+new google.maps.LatLng(24.767971, 120.992459),
+new google.maps.LatLng(24.768318, 120.992141),
+new google.maps.LatLng(24.769095, 120.991885),
+new google.maps.LatLng(24.769328, 120.991446),
+new google.maps.LatLng(24.769891, 120.990900),
+new google.maps.LatLng(24.770375, 120.989732),
+new google.maps.LatLng(24.770585, 120.988255),
+new google.maps.LatLng(24.770477, 120.986954),
+new google.maps.LatLng(24.769488, 120.987409),
+new google.maps.LatLng(24.768960, 120.987964),
+new google.maps.LatLng(24.768460, 120.988035),
+new google.maps.LatLng(24.768004, 120.987996),
+new google.maps.LatLng(24.767561, 120.987987),
+new google.maps.LatLng(24.766790, 120.987988),
+new google.maps.LatLng(24.765882, 120.988085),
+new google.maps.LatLng(24.764961, 120.988520),
+new google.maps.LatLng(24.764325, 120.989156),
+new google.maps.LatLng(24.763968, 120.989270),
+new google.maps.LatLng(24.763205, 120.989080),
+new google.maps.LatLng(24.762676, 120.989116)]]});
+
+
+	</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcsp2nRvg6g_pxPel3cKcQSrBRg_f22Y&callback=initMap">
+	</script>
+  </body>
+</html>

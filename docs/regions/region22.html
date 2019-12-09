@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Regional 22</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<style>
+  	/* Always set the map height explicitly to define the size of the div
+   	* element that contains the map. */
+  	#map {
+    	height: 100%;
+  	}
+  	/* Optional: Makes the sample page fill the window. */
+  	html, body {
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+  	}
+	</style>
+  </head>
+  <body>
+	<div id="map"></div>
+	<script>
+
+  	// This example uses the Google Maps JavaScript API's Data layer
+  	// to create a rectangular polygon with 2 holes in it.
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 14.98,
+	center: {
+  	lat: 24.8090081,
+  	lng: 121.0005609
+	}
+  });
+
+var noPoi = [
+{
+  featureType: "poi",
+  stylers: [
+  { visibility: "off" }
+  ]
+}
+];
+map.setOptions({styles: noPoi});
+
+var polygonMask = new google.maps.Polygon({
+map:map,
+strokeColor: '#000000',
+strokeOpacity: 0.5,
+strokeWeight: 2,
+fillColor: '#CACACA',
+fillOpacity: 0.7,
+paths: [[new google.maps.LatLng(24.744874, 120.948242),
+new google.maps.LatLng(24.791636, 120.948242),
+new google.maps.LatLng(24.791636, 121.004246),
+new google.maps.LatLng(24.744874, 121.004246),
+new google.maps.LatLng(24.744874, 120.948242)],
+[new google.maps.LatLng(24.768255, 120.973497),
+new google.maps.LatLng(24.767432, 120.973513),
+new google.maps.LatLng(24.764916, 120.973865),
+new google.maps.LatLng(24.765081, 120.974470),
+new google.maps.LatLng(24.764734, 120.974686),
+new google.maps.LatLng(24.764308, 120.974666),
+new google.maps.LatLng(24.763938, 120.975042),
+new google.maps.LatLng(24.764144, 120.975874),
+new google.maps.LatLng(24.764402, 120.976418),
+new google.maps.LatLng(24.764336, 120.976905),
+new google.maps.LatLng(24.763836, 120.976870),
+new google.maps.LatLng(24.763566, 120.976787),
+new google.maps.LatLng(24.763100, 120.977068),
+new google.maps.LatLng(24.763120, 120.977402),
+new google.maps.LatLng(24.763364, 120.978126),
+new google.maps.LatLng(24.763506, 120.978489),
+new google.maps.LatLng(24.763615, 120.978756),
+new google.maps.LatLng(24.763359, 120.978739),
+new google.maps.LatLng(24.763289, 120.979267),
+new google.maps.LatLng(24.763390, 120.979531),
+new google.maps.LatLng(24.763772, 120.980006),
+new google.maps.LatLng(24.764177, 120.980480),
+new google.maps.LatLng(24.764575, 120.980567),
+new google.maps.LatLng(24.765245, 120.980611),
+new google.maps.LatLng(24.765683, 120.980750),
+new google.maps.LatLng(24.766132, 120.981201),
+new google.maps.LatLng(24.766521, 120.981458),
+new google.maps.LatLng(24.767028, 120.982274),
+new google.maps.LatLng(24.767164, 120.983497),
+new google.maps.LatLng(24.767271, 120.984988),
+new google.maps.LatLng(24.767247, 120.986013),
+new google.maps.LatLng(24.768540, 120.986053),
+new google.maps.LatLng(24.769479, 120.985386),
+new google.maps.LatLng(24.770376, 120.984318),
+new google.maps.LatLng(24.770962, 120.982864),
+new google.maps.LatLng(24.771860, 120.980471),
+new google.maps.LatLng(24.770515, 120.974377),
+new google.maps.LatLng(24.768255, 120.973497)]]});
+
+
+
+	</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcsp2nRvg6g_pxPel3cKcQSrBRg_f22Y&callback=initMap">
+	</script>
+  </body>
+</html>
