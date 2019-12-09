@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Regional 8</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<style>
+  	/* Always set the map height explicitly to define the size of the div
+   	* element that contains the map. */
+  	#map {
+    	height: 100%;
+  	}
+  	/* Optional: Makes the sample page fill the window. */
+  	html, body {
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+  	}
+	</style>
+  </head>
+  <body>
+	<div id="map"></div>
+	<script>
+
+  	// This example uses the Google Maps JavaScript API's Data layer
+  	// to create a rectangular polygon with 2 holes in it.
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 15.85,
+	center: {
+  	lat: 24.7931282,
+  	lng: 121.0100599
+	}
+  });
+
+var noPoi = [
+{
+  featureType: "poi",
+  stylers: [
+  { visibility: "off" }
+  ]
+}
+];
+map.setOptions({styles: noPoi});
+
+var polygonMask = new google.maps.Polygon({
+map:map,
+strokeColor: '#000000',
+strokeOpacity: 0.5,
+strokeWeight: 2,
+fillColor: '#CACACA',
+fillOpacity: 0.7,
+paths: [[new google.maps.LatLng(24.780426, 120.996131),
+new google.maps.LatLng(24.803802, 120.996131),
+new google.maps.LatLng(24.803802, 121.024133),
+new google.maps.LatLng(24.780426, 121.024133),
+new google.maps.LatLng(24.780426, 120.996131)],
+[new google.maps.LatLng(24.787215, 121.004048),
+new google.maps.LatLng(24.787020, 121.009681),
+new google.maps.LatLng(24.787859, 121.010574),
+new google.maps.LatLng(24.788854, 121.011296),
+new google.maps.LatLng(24.791097, 121.012202),
+new google.maps.LatLng(24.793505, 121.013141),
+new google.maps.LatLng(24.795942, 121.013522),
+new google.maps.LatLng(24.796838, 121.010609),
+new google.maps.LatLng(24.798202, 121.007900),
+new google.maps.LatLng(24.795969, 121.007506),
+new google.maps.LatLng(24.794731, 121.007067),
+new google.maps.LatLng(24.793493, 121.006586),
+new google.maps.LatLng(24.787215, 121.004048)]]});
+
+
+}
+
+	</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcsp2nRvg6g_pxPel3cKcQSrBRg_f22Y&callback=initMap">
+	</script>
+  </body>
+</html>
