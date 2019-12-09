@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Regional 16</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<style>
+  	/* Always set the map height explicitly to define the size of the div
+   	* element that contains the map. */
+  	#map {
+    	height: 100%;
+  	}
+  	/* Optional: Makes the sample page fill the window. */
+  	html, body {
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+  	}
+	</style>
+  </head>
+  <body>
+	<div id="map"></div>
+	<script>
+
+  	// This example uses the Google Maps JavaScript API's Data layer
+  	// to create a rectangular polygon with 2 holes in it.
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 14.98,
+	center: {
+  	lat: 24.8090081,
+  	lng: 121.0005609
+	}
+  });
+
+var noPoi = [
+{
+  featureType: "poi",
+  stylers: [
+  { visibility: "off" }
+  ]
+}
+];
+map.setOptions({styles: noPoi});
+
+
+
+var polygonMask = new google.maps.Polygon({
+map:map,
+strokeColor: '#000000',
+strokeOpacity: 0.5,
+strokeWeight: 2,
+fillColor: '#CACACA',
+fillOpacity: 0.7,
+paths: [[new google.maps.LatLng(24.783619, 120.958964),
+new google.maps.LatLng(24.806994, 120.958964),
+new google.maps.LatLng(24.806994, 120.986966),
+new google.maps.LatLng(24.783619, 120.986966),
+new google.maps.LatLng(24.783619, 120.958964)],
+[new google.maps.LatLng(24.794788, 120.972402),
+new google.maps.LatLng(24.793354, 120.974017),
+new google.maps.LatLng(24.794285, 120.976635),
+new google.maps.LatLng(24.795524, 120.975756),
+new google.maps.LatLng(24.796875, 120.974787),
+new google.maps.LatLng(24.798219, 120.973801),
+new google.maps.LatLng(24.799572, 120.972837),
+new google.maps.LatLng(24.797240, 120.969041),
+new google.maps.LatLng(24.796389, 120.970287),
+new google.maps.LatLng(24.795529, 120.971525),
+new google.maps.LatLng(24.794788, 120.972402)]]});
+
+}
+
+	</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcsp2nRvg6g_pxPel3cKcQSrBRg_f22Y&callback=initMap">
+	</script>
+  </body>
+</html>
