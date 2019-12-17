@@ -12,7 +12,8 @@ for f in filelist:
   with open(f,'r') as infile:
     strlines = infile.readlines()
   print(f, end="\t")
-  paths = [line for line in strlines if 'new google.maps.LatLng' in line][5:]
+  paths = [line for line in strlines if 'new google.maps.LatLng' in line]
+  paths = paths[min([idx for idx in range(len(paths)) if paths[idx][0]=='[']):]
   pattern = re.compile('.*\((\d+\.\d+), (\d+\.\d+)\)')
   lat = list(map(lambda x: float(pattern.match(x).group(1)), paths))
   mean_lat = (max(lat)+min(lat))/2
