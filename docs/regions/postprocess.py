@@ -37,9 +37,9 @@ for f in filelist:
   with open(f,'w') as outfile:
     for strline in strlines:
       if "lat:" in strline:
-        outfile.write("    lat: {:.8f}.\n".format(mean_lat))
+        outfile.write("    lat: {:.8f},\n".format(mean_lat))
       elif "lng:" in strline:
-        outfile.write("    lng: {:.8f}.\n".format(mean_lng))
+        outfile.write("    lng: {:.8f}\n".format(mean_lng))
       else:
         outfile.write(strline)
 
