@@ -38,7 +38,7 @@ colorMap = {"L01":"red","L02":"blue","L03":"black","L04":"green","L05":"brown","
 polys = ""
 for d in dirlist:
     print('process',d)
-    filelist = [s for s in listdir(d) if match(r"R\dL\d*",s)]
+    filelist = [s for s in listdir(d) if match(r"R\d+L\d*",s)]
     latlng = []
     for f in filelist:
         if '_' in f:

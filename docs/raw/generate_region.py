@@ -26,7 +26,7 @@ def calCenter(latlng):
 
 for d in dirlist:
     print('process',d)
-    filelist = [s for s in listdir(d) if match(r"R\dL\d*",s)]
+    filelist = [s for s in listdir(d) if match(r"R\d+L\d*",s)]
     latlng = []
     for f in filelist:
         tmp = extractLatLng('/'.join([d,f]))
