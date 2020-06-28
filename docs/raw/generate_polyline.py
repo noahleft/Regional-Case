@@ -41,7 +41,7 @@ for d in dirlist:
     filelist = [s for s in listdir(d) if match(r"R\d+L\d*",s)]
     latlng = []
     for f in filelist:
-        if '_' in f:
+        if '_' in f or '-' in f:
             pass
         else:
             color = colorMap[f[f.index('L'):]]
