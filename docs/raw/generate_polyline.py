@@ -19,7 +19,7 @@ strokeColor: '#000000',
 strokeOpacity: 0.5,
 strokeWeight: 2,
 fillColor: '#CACACA',
-fillOpacity: 0.7,
+fillOpacity: 0.2,
 paths: [
 
 	RegionMask
