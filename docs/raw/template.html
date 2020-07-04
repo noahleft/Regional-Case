@@ -10,6 +10,19 @@
   	#map {
     	height: 100%;
   	}
+	#legend {
+		font-family: Arial, sans-serif;
+		background: #fff;
+		padding: 10px;
+		margin: 10px;
+		border: 3px solid #000;
+	}
+	#legend h3 {
+		margin-top: 0;
+	}
+	#legend img {
+		vertical-align: middle;
+	}
   	/* Optional: Makes the sample page fill the window. */
   	html, body {
     	height: 100%;
@@ -20,48 +33,47 @@
   </head>
   <body>
 	<div id="map"></div>
+	<div id="legend"><h1>RegionalTitle</h1></div>
 	<script>
 
   	// This example uses the Google Maps JavaScript API's Data layer
   	// to create a rectangular polygon with 2 holes in it.
+	var map;
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 17,
+			center: {
+			lat: RegionCeterLat,
+			lng: RegionCeterLng
+			}
+		});
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-	zoom: 17,
-	center: {
-    lat: RegionCeterLat,
-    lng: RegionCeterLng
+	var noPoi = [
+		{
+			featureType: "poi",
+			stylers: [{ visibility: "off" }]
+		}
+	];
+	map.setOptions({styles: noPoi});
+	
+	var legend = document.getElementById('legend');
+	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+
+	var polygonMask = new google.maps.Polygon({
+		map:map,
+		strokeColor: '#000000',
+		strokeOpacity: 0.5,
+		strokeWeight: 2,
+		fillColor: '#CACACA',
+		fillOpacity: 0.7,
+		paths: [[
+			RegionBorder
+		],
+		[
+			RegionMask
+		]]});
+
 	}
-  });
-
-var noPoi = [
-{
-  featureType: "poi",
-  stylers: [
-  { visibility: "off" }
-  ]
-}
-];
-map.setOptions({styles: noPoi});
-
-var polygonMask = new google.maps.Polygon({
-map:map,
-strokeColor: '#000000',
-strokeOpacity: 0.5,
-strokeWeight: 2,
-fillColor: '#CACACA',
-fillOpacity: 0.7,
-paths: [[
-	RegionBorder
-],
-[
-	RegionMask
-]]});
-
-
-
-}
-
 	</script>
 	<script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcsp2nRvg6g_pxPel3cKcQSrBRg_f22Y&callback=initMap">

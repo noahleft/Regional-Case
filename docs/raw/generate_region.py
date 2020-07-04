@@ -58,10 +58,11 @@ for d in dirlist:
     midlatlng = calCenter(latlng)
     content = content.replace('RegionCeterLat', str(midlatlng[0]))
     content = content.replace('RegionCeterLng', str(midlatlng[1]))
-    content = content.replace('RegionalTitle', d)
     if d=='region99':
+        content = content.replace('RegionalTitle', 'Border View')
         content = content.replace('RegionBorder', borderstring)
     else:
+        content = content.replace('RegionalTitle', d)
         content = content.replace('RegionBorder', generateMask(borderlatlng))
     with open('/'.join([d,d+'.html']),'w') as outfile:
         outfile.write(content)
